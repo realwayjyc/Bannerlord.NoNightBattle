@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Module>
+  <Name value="No night battle" />
+  <Id value="NoNightBattle" />
+  <Version value="v1.2.9.1120" />
+  <SingleplayerModule value="true" />
+  <MultiplayerModule value="false" />
+    <DependedModules>
+	    <DependedModule Id="Bannerlord.Harmony" DependentVersion="v2.3.0.0" />
+    </DependedModules>
+
+  <SubModules>
+    <SubModule>
+      <Name value="No night battle" />
+      <DLLName value="NoNightBattle.dll" />
+      <SubModuleClassType value="NoNightBattle.NNBSubModule" />
+      <Tags>
+        <Tag key="DedicatedServerType" value="none" />
+        <Tag key="IsNoRenderModeElement" value="false" />
+      </Tags>
+    </SubModule>
+  </SubModules>
+  <Xmls>
+    <XmlNode>
+      <XmlName id="GameText" path="module_strings"/>
+      <IncludedGameTypes>
+        <GameType value = "Campaign"/>
+        <GameType value = "CampaignStoryMode"/>
+      </IncludedGameTypes>
+    </XmlNode>
+  </Xmls>
+</Module>
