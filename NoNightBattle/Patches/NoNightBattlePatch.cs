@@ -12,17 +12,20 @@ namespace NoNightBattle.Patches
     [HarmonyPatch(typeof(DefaultMapWeatherModel), "GetHourOfDay")]
     internal class NoNightBattlePatch
     {
-        [HarmonyPostfix]
-        public static void GetHourOfDay(DefaultMapWeatherModel __instance,ref float __result)
+        [HarmonyPrefix]
+        public static bool GetHourOfDay(ref float __result)
         {
-            if (__result <= 6.0f)
+            __result =(float) CampaignTime.Now.ToHours;
+            if (__result <= 9.0f)
             {
-                __result = 6f;
+                __result = 9f;
             }
-            else if (__result >=18.0f)
+            else if (__result >=15.0f)
             {
-                __result = 18.0f;
+                __result = 15.0f;
             }
+            
+            return false;
         }
     }
 }
