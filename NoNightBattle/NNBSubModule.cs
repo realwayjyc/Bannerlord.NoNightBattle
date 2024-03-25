@@ -1,7 +1,4 @@
 ﻿using HarmonyLib;
-using System;
-using System.Windows.Forms;
-using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 
 namespace NoNightBattle
@@ -14,6 +11,7 @@ namespace NoNightBattle
         {
             base.OnSubModuleLoad();
             new Harmony(Namespace).PatchAll();
+            TaleWorlds.MountAndBlade.MessageManager.DisplayMessage("NoNightBattle Started");
         }
     }
 }
